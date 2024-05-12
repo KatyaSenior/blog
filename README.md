@@ -1,3 +1,8 @@
+User Stories
+🐿️ As a user, I want to browse a list of posts, sortable by ascending or descending order. First part achieved.
+🐿️ As a user, I want to see a list of categories, and click on a category to see a list of posts in that category. Not acheived.
+🐿️ As a user, I want to be able to leave a comment sharing my thoughts on each post. ACHEIVED.
+
 Requirements:
 
 🎯 Created using create-next-app. ACHEIVED.
@@ -12,15 +17,9 @@ Requirements:
 
 🎯 Refresh the /post/:postId route when adding a new comment, so the new comment is displayed on the page. ACHEIVED.
 
-Stretch Goals:
+Acheived Stretch Goals:
 
-🏹 Add a categories table to allow categorisation of posts at creation time using a dropdown menu. Add a /categories route that lists all categories, and a /categories/:id route that lists all posts in a category.
-
-🏹 Add a new /posts/:id/edit route that allows editing a post. Populate the form with the post data, and save changes by updating the post in the database with a server action.
-
-🏹 Add a delete button to the post page that removes the post from the database.
-
-🏹 Add a new /posts/:id/comments/:id/edit route that allows editing a comment. Populate the form with the comment data, and save changes by updating the comment in the database with a server action.
+🏹 Add a new /posts/:id/edit route that allows editing a post. Populate the form with the post data, and save changes by updating the post in the database with a server action. ACHEIVED.
 
 Bugs:
 

@@ -1,6 +1,7 @@
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 
 export default async function PostPage({ params }) {
   const result = await sql`SELECT * FROM blogPosts WHERE id = ${params.id}`;
@@ -29,6 +30,9 @@ export default async function PostPage({ params }) {
     <div key={blogPost.id}>
       <h3>{blogPost.title}</h3>
       <p>{blogPost.content}</p>
+      <Link href={`/posts/${encodeURIComponent(blogPost.id)}/edit`}>
+        Edit Post
+      </Link>
       {postComments.map((comment) => (
         <div key={comment.id}>
           <p>{comment.content}</p>
