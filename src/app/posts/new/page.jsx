@@ -1,6 +1,6 @@
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/dist/server/api-utils";
+import { redirect } from "next/navigation";
 
 export default function NewPostsPage() {
   async function handleSavePost(formData) {
@@ -13,6 +13,7 @@ export default function NewPostsPage() {
     console.log("Post saved!");
     revalidatePath("/app");
     console.log("Post saved!");
+    redirect("/");
   }
   return (
     <form action={handleSavePost}>

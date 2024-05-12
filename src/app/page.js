@@ -1,8 +1,11 @@
 import { sql } from "@vercel/postgres";
 import Image from "next/image";
+import "./globals.css";
+import Link from "next/link";
 
 export default async function Home() {
   const blogPosts = await sql`SELECT*FROM blogPosts`;
+  const postComments = await sql`SELECT*FROM postComments`;
   console.log({ blogPosts });
   return (
     <div>
@@ -12,12 +15,10 @@ export default async function Home() {
           <div key={blogPost.id}>
             <h3>{blogPost.title}</h3>
             <p>{blogPost.content}</p>
-            {/* <Image
-              src={`${blogPost.title}`}
-              alt={blogPost.title}
-              width={300}
-              height={300}
-            /> */}
+            <div key={postComments.id}></div>
+            <Link href={`/posts/${encodeURIComponent(blogPost.id)}`}>
+              See comments
+            </Link>
           </div>
         );
       })}
